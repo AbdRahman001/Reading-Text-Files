@@ -6,9 +6,22 @@ from fileinput import filename
 
 def read_file_content(filename):
   # [assignment] Add your code here 
-  with open('./story.txt', 'r') as f:
+  with open('story.txt', 'r') as f:
     file = f.read()
 
   return file
-result = read_file_content("./story.txt")
+result = read_file_content("story.txt")
 print(result)
+
+
+def count_words():
+  text = read_file_content('story.txt')
+  count = dict()
+  words = text.split()
+  for word in words:
+     if word in count:
+         count[word] = +1
+     else:
+        count[word] = 1
+  return (count) 
+  print(count_words()) 
